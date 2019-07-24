@@ -5,27 +5,23 @@ project 1 - A Random Quote Generator
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
-
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
-
-
-
-
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+//generates a random integer from 1 up to the input
+function getRandomNumber(max) {
+  let randomN;
+  randomN = Math.floor(Math.random()*max) + 1;
+  return randomN;
+}
 
-
+function getRandomQuote() {
+  let index = getRandomNumber(quotes.length) - 1;
+  return quotes[index];
+}
 
 /***
   Create the `printQuote` function to: 
@@ -40,8 +36,23 @@ project 1 - A Random Quote Generator
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function printQuote() {
+  let randomQuote = getRandomQuote();
+  let strHTML = '';
+  strHTML += '<p class="quote">' + randomQuote.quote + '</p>';
+  strHTML += '<p class="source">' + randomQuote.source;
+  if (randomQuote.citation !== '') {
+    strHTML += '<span class="citation">' + randomQuote.citation + '</span>';
+  }
+  if (randomQuote.hasOwnProperty('year')){
+    strHTML += '<span class="year">' + randomQuote.year + '</span>';
+  }
+  strHTML += '</p>';
+  let quoteBoxDiv = document.getElementById('quote-box');
+  quoteBoxDiv.innerHTML = strHTML;
+}
 
-
+printQuote();
 
 /***
   When the "Show another quote" button is clicked, the event listener 
