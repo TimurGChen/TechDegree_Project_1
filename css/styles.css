@@ -71,6 +71,14 @@ body {
   font-style: normal;
 }
 
+.category {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: right;
+  margin-right: 4em;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
@@ -81,7 +89,7 @@ body {
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
-  background-color: #36b55c;
+  background-color: rgba(255,255,255,0);
   padding: 15px 0;
   transition: .5s ;
 }
@@ -101,6 +109,9 @@ body {
     font-size: 6rem;
   }
   .source {
+    font-size: 1.25rem;
+  }
+  .category{
     font-size: 1.25rem;
   }
 }
