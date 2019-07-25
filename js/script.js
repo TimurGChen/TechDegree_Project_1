@@ -75,5 +75,4 @@ interv = setInterval(printQuote, 20000);
 /***
   Clicking the button calls printQuote();
 ***/
-
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
